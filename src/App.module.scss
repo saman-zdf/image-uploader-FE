@@ -47,6 +47,12 @@
   }
 }
 
+.SuccessIcon {
+  color: green;
+  width: 40px !important;
+  height: 40px !important;
+}
+
 .ImageUploader__input {
   width: 310px;
   height: 210px;
@@ -79,6 +85,7 @@
     &.ImageUrl {
       width: 100%;
       height: 100%;
+      object-fit: cover;
       top: 0;
     }
 
@@ -104,5 +111,77 @@
     border-radius: 8px;
     padding: 8px 16px;
     margin: 16px;
+  }
+}
+
+.ImageUploader__header {
+  @include flex__column;
+  p {
+    text-align: left;
+  }
+}
+
+.ProgressContainer {
+  width: 100%;
+  height: 6px;
+  border-radius: 8px;
+  background: #f2f2f2;
+  margin-top: 24px;
+  overflow: hidden;
+}
+
+.Progress__bar {
+  width: 60px;
+  height: 100%;
+  border-radius: 8px;
+  background: #2f80ed;
+  animation: infinite progress 2.5s linear;
+}
+
+@keyframes progress {
+  0% {
+    transform: translateX(-50px);
+  }
+
+  100% {
+    transform: translateX(360px);
+  }
+}
+
+.ImageUrlContainer {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  width: 90%;
+  height: 34px;
+  background: #e9e9e9e9;
+  margin-top: 24px;
+  border-radius: 8px;
+  border: 1px solid #c5c5c5e6;
+  position: relative;
+
+  button {
+    border: none;
+    background-color: #2f80ed;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+
+    border-radius: 8px;
+    padding: 8px 16px;
+  }
+}
+
+.ImageUrlText {
+  width: 230px;
+  margin-top: 4px;
+  p {
+    @include regular__font;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    margin-bottom: 4px;
   }
 }
